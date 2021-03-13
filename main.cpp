@@ -52,7 +52,7 @@ int main() {
           }
         
         // Run GUI algorithm
-        cout << MustangBronco(x) << endl;
+        cout << MustangBronco(int(x)) << endl;
         
         // Loop until User gives a valid Answer (y/n)
         while(true){
