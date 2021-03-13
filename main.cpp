@@ -36,32 +36,39 @@ int main() {
     while(run){
         
         // Prompt user for a number and run the algorithm
-        cout << "Enter a number: ";
-        int x;
-        cin >> x;
+        cout << "Enter an integer: ";
+        double x;
+        while (true)
+          {
+              cin >> x;
+              if ((trunc(x) != x) || !cin){
+                  cout << "Invalid input, Enter an integer: ";
+                  cin.clear();
+                  cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                  continue;
+              }
+              else break;
+          }
         cout << MustangBronco(x) << endl;
         
         // Loop until User gives a valid Answer (y/n)
-        bool run2 = true;
-        while(run2){
+        while(true){
             
             // Prompt user to try another number
             cout << "Try Again? (y/n): ";
             string ans;
             cin >> ans;
-            
             // Handle different user inputs
             if(ans == "y"){
-                run2 = false;
                 cout << endl;
-                continue;
+                break;
             }
             else if(ans == "n"){
                 run = false;
-                run2 = false;
+                break;
             }
             else{
-                cout << "Answer must be (Y/N)" << endl;
+                cout << "Answer must be (y/n)" << endl;
             }
             
         }
