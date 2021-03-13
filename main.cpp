@@ -27,7 +27,6 @@ string MustangBronco(int x){
     else{
         return to_string(x);
     }
-    
 }
 
 int main() {
@@ -35,9 +34,11 @@ int main() {
     bool run = true;
     while(run){
         
-        // Prompt user for a number and run the algorithm
+        // Prompt user for an integer
         cout << "Enter an integer: ";
         double x;
+        
+        // Read input and confirm the input is an integer
         while (true)
           {
               cin >> x;
@@ -49,6 +50,8 @@ int main() {
               }
               else break;
           }
+        
+        // Run GUI algorithm
         cout << MustangBronco(x) << endl;
         
         // Loop until User gives a valid Answer (y/n)
@@ -58,6 +61,7 @@ int main() {
             cout << "Try Again? (y/n): ";
             string ans;
             cin >> ans;
+            
             // Handle different user inputs
             if(ans == "y"){
                 cout << endl;
@@ -70,9 +74,7 @@ int main() {
             else{
                 cout << "Answer must be (y/n)" << endl;
             }
-            
         }
-        
     }
     return 0;
 }
